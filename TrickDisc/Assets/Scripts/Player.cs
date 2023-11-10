@@ -20,7 +20,9 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float maxOffset;
 
-    [SerializeField] private float timeForHalfCycle;
+    [SerializeField] private float baseTimeForHalfCycle = 1.0f;
+
+    private float timeForHalfCycle;
 
     [SerializeField] private float intialOffset;
 
@@ -60,7 +62,8 @@ public class Player : MonoBehaviour
 
         canShoot = true;
         shootCounter = 0.5f;
-        shootCounterSpeed = 1 / timeForHalfCycle;
+        timeForHalfCycle = baseTimeForHalfCycle;
+        shootCounterSpeed = 1 / baseTimeForHalfCycle;
 
         canMove = false;
         moveDirection = Vector3.zero;
@@ -73,6 +76,8 @@ public class Player : MonoBehaviour
         if (canShoot && Input.GetMouseButtonDown(0))
         {
             Shoot();
+
+            Debug.Log(timeForHalfCycle);
         }
     }
 
@@ -150,6 +155,7 @@ public class Player : MonoBehaviour
             Instantiate(greenExplosionPrefab, transform.position, Quaternion.identity);
             GameManager.Instance.UpdateScore();
             moveDirection *= -1f;
+            timeForHalfCycle -= 0.1f;
             return;
         }
     }
