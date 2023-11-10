@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            bestScoreText.text = "BEST" + highScore.ToString();
+            bestScoreText.text = "BEST " + highScore.ToString();
         }
     }
 }
