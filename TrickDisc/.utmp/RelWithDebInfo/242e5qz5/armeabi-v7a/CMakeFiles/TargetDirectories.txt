@@ -1,0 +1,5 @@
+C:/Users/matia/Downloads/TrickDisk/TrickDisc/.utmp/RelWithDebInfo/242e5qz5/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/matia/Downloads/TrickDisk/TrickDisc/.utmp/RelWithDebInfo/242e5qz5/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+C:/Users/matia/Downloads/TrickDisk/TrickDisc/.utmp/RelWithDebInfo/242e5qz5/armeabi-v7a/FramePacing/CMakeFiles/swappywrapper.dir
+C:/Users/matia/Downloads/TrickDisk/TrickDisc/.utmp/RelWithDebInfo/242e5qz5/armeabi-v7a/FramePacing/CMakeFiles/edit_cache.dir
+C:/Users/matia/Downloads/TrickDisk/TrickDisc/.utmp/RelWithDebInfo/242e5qz5/armeabi-v7a/FramePacing/CMakeFiles/rebuild_cache.dir
