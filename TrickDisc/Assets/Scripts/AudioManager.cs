@@ -15,15 +15,15 @@ public class AudioManager : MonoBehaviour
     {
         get
         {
-            isSoundMuted = (PlayerPrefs.HasKey(Constants.DATA.SETTTINGS_SOUND) 
-                ? PlayerPrefs.GetInt(Constants.DATA.SETTTINGS_SOUND) : 1) == 0;
+            isSoundMuted = (PlayerPrefs.HasKey(Constants.DATA.SETTINGS_SOUND) 
+                ? PlayerPrefs.GetInt(Constants.DATA.SETTINGS_SOUND) : 1) == 0;
 
             return isSoundMuted;
         }
         set
         {
             isSoundMuted = value;
-            PlayerPrefs.SetInt(Constants.DATA.SETTTINGS_SOUND, isSoundMuted ? 0 : 1);
+            PlayerPrefs.SetInt(Constants.DATA.SETTINGS_SOUND, isSoundMuted ? 0 : 1);
         }
     }
 
@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        PlayerPrefs.SetInt(Constants.DATA.SETTTINGS_SOUND, IsSoundMuted ? 0 : 1);
+        PlayerPrefs.SetInt(Constants.DATA.SETTINGS_SOUND, IsSoundMuted ? 0 : 1);
 
         effectSource.mute = IsSoundMuted;
     }

@@ -71,14 +71,14 @@ public class GameManager : MonoBehaviour
 
     public void ToggleSound()
     {
-        bool sound = (PlayerPrefs.HasKey(Constants.DATA.SETTTINGS_SOUND) ? PlayerPrefs.GetInt(Constants.DATA.SETTTINGS_SOUND)
+        bool sound = (PlayerPrefs.HasKey(Constants.DATA.SETTINGS_SOUND) ? PlayerPrefs.GetInt(Constants.DATA.SETTINGS_SOUND)
             : 1) == 1;
 
         sound = !sound;
 
         soundImage.sprite = sound ? activeSoundSprite : inactiveSoundSprite;
 
-        PlayerPrefs.SetInt(Constants.DATA.SETTTINGS_SOUND, sound ? 1 : 0);
+        PlayerPrefs.SetInt(Constants.DATA.SETTINGS_SOUND, sound ? 1 : 0);
 
         AudioManager.instance.ToggleSound();
     }
@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
         endPanel.SetActive(true);
         endScoreText.text = score.ToString();
 
-        bool sound = (PlayerPrefs.HasKey(Constants.DATA.SETTTINGS_SOUND) ? PlayerPrefs.GetInt(Constants.DATA.SETTTINGS_SOUND)
+        bool sound = (PlayerPrefs.HasKey(Constants.DATA.SETTINGS_SOUND) ? PlayerPrefs.GetInt(Constants.DATA.SETTINGS_SOUND)
             : 1) == 1;
         soundImage.sprite = sound ? activeSoundSprite : inactiveSoundSprite;
 

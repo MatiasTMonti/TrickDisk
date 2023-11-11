@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class PreSceneManager : MonoBehaviour
 {
     [SerializeField] private string menuSceneName;
-    [SerializeField] private float tiempoMinimoDeEspera = 1.0f;
+    [SerializeField] private float tiempoMinimoDeEspera = 1.5f;
 
     private void Start()
     {
