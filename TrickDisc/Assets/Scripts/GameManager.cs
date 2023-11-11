@@ -102,6 +102,8 @@ public class GameManager : MonoBehaviour
 
         int highScore = PlayerPrefs.HasKey(Constants.DATA.HIGH_SCORE) ? PlayerPrefs.GetInt(Constants.DATA.HIGH_SCORE) : 0;
 
+        VibrationManager.Instance.Vibrate();
+
         if (score > highScore)
         {
             highScore = score;
