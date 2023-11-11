@@ -25,16 +25,14 @@ public class VibrationManager : MonoBehaviour
         set
         {
             isVibrationEnabled = value;
-            // Guarda la preferencia en PlayerPrefs
-            PlayerPrefs.SetInt("VibrationEnabled", isVibrationEnabled ? 1 : 0);
+            PlayerPrefs.SetInt(Constants.DATA.SETTINGS_VIBRATION, isVibrationEnabled ? 1 : 0);
             PlayerPrefs.Save();
         }
     }
 
     private void Start()
     {
-        // Carga la preferencia almacenada en PlayerPrefs al inicio
-        isVibrationEnabled = PlayerPrefs.GetInt("VibrationEnabled", 1) == 1;
+        isVibrationEnabled = PlayerPrefs.GetInt(Constants.DATA.SETTINGS_VIBRATION, 1) == 1;
     }
 
     public void Vibrate()

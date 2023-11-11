@@ -58,7 +58,7 @@ public class MainMenuManager : MonoBehaviour
     public void ToggleVibration()
     {
         bool vibracionActivada = (PlayerPrefs.HasKey(Constants.DATA.SETTINGS_VIBRATION)
-            ? PlayerPrefs.GetInt(Constants.DATA.SETTINGS_VIBRATION) : 1) == 1;
+        ? PlayerPrefs.GetInt(Constants.DATA.SETTINGS_VIBRATION) : 1) == 1;
 
         // Invierte el estado de la vibración
         vibracionActivada = !vibracionActivada;
@@ -69,8 +69,7 @@ public class MainMenuManager : MonoBehaviour
         // Guarda la configuración de la vibración
         PlayerPrefs.SetInt(Constants.DATA.SETTINGS_VIBRATION, vibracionActivada ? 1 : 0);
 
-        // Realiza cualquier acción relacionada con la vibración
-        // (Podrías agregar una función en VibrationManager similar a ToggleSound en AudioManager)
-        VibrationManager.Instance.Vibrate();
+        VibrationManager.Instance.IsVibrationEnabled = vibracionActivada;
+
     }
 }
