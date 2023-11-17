@@ -1,32 +1,30 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class TutorialController : MonoBehaviour
 {
     [SerializeField] private GameObject creditsPanel;
 
-    private string tutorialKey = "TutorialShown";
-
     void Start()
     {
-        // Verifica si el tutorial ya ha sido mostrado
-        if (!PlayerPrefs.HasKey(tutorialKey))
+        if (!PlayerPrefs.HasKey(Constants.DATA.TUTORIAL_KEY))
         {
-            // Si no ha sido mostrado, muestra el tutorial
             ShowTutorial();
-
-            // Marca el tutorial como mostrado
-            PlayerPrefs.SetInt(tutorialKey, 1);
-            PlayerPrefs.Save();
         }
     }
 
     void ShowTutorial()
     {
         creditsPanel.SetActive(true);
+    }
 
-        // Después de un tiempo, oculta el tutorial
-        Invoke("HideTutorial", 1f);
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            HideTutorial();
+            PlayerPrefs.SetInt(Constants.DATA.TUTORIAL_KEY, 1);
+            PlayerPrefs.Save();
+        }
     }
 
     void HideTutorial()
