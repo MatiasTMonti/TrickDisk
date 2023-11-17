@@ -3,6 +3,7 @@ using UnityEditor;
 
 public class PlayerPrefsTool : MonoBehaviour
 {
+#if UNITY_EDITOR
     [MenuItem("Tools/Reset PlayerPrefs")]
     public static void ResetPlayerPrefs()
     {
@@ -26,4 +27,5 @@ public class PlayerPrefsTool : MonoBehaviour
             ResetPlayerPrefs();
         }
     }
+#endif
 }
