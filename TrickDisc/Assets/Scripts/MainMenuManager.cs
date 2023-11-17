@@ -68,7 +68,7 @@ public class MainMenuManager : MonoBehaviour
         // Guarda la configuración de la vibración
         PlayerPrefs.SetInt(Constants.DATA.SETTINGS_VIBRATION, vibracionActivada ? 1 : 0);
 
+        // Actualiza la configuración de la vibración en VibrationManager
         VibrationManager.Instance.IsVibrationEnabled = vibracionActivada;
-
     }
 }

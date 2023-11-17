@@ -30,7 +30,7 @@ public class VibrationManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Awake()
     {
         isVibrationEnabled = PlayerPrefs.GetInt(Constants.DATA.SETTINGS_VIBRATION, 1) == 1;
     }
