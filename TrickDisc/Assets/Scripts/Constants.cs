@@ -7,6 +7,7 @@ namespace Constants
         public const string MAIN_MENU_SCENE = "MainMenu";
         public const string GAMEPLAY_SCENE = "Gameplay";
         public const string SETTINGS_VIBRATION = "SETTINGS_VIBRATION";
+        public const string TUTORIAL_KEY = "TUTORIAL_SHOW";
     }
 
     public class TAGS

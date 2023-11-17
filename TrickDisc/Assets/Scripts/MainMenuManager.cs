@@ -21,7 +21,6 @@ public class MainMenuManager : MonoBehaviour
         bool vibracionActivada = (PlayerPrefs.HasKey(Constants.DATA.SETTINGS_VIBRATION)
             ? PlayerPrefs.GetInt(Constants.DATA.SETTINGS_VIBRATION) : 1) == 1;
 
-        // Configura la imagen según el estado actual de la vibración
         vibracionImage.sprite = vibracionActivada ? vibracionActivadaSprite : vibracionDesactivadaSprite;
 
 
