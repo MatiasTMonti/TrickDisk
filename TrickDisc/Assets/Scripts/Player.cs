@@ -1,9 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //SHOP
+    [SerializeField] private SkinManager skinManager;
+    [SerializeField] private GameObject bolaACambiarDeColor;
+
     [SerializeField] private GameObject bgObject;
 
     [SerializeField] private GameObject directionObject;
@@ -50,6 +52,18 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        //
+        Sprite selectedSprite = skinManager.GetSelectedSkin().sprite;
+
+        if (selectedSprite != null)
+        {
+            bolaACambiarDeColor.GetComponent<SpriteRenderer>().sprite = selectedSprite;
+        }
+        else
+        {
+            Debug.LogError("No se encontró un Sprite seleccionado en el SkinManager.");
+        }
+        //Shop
         bgObject.SetActive(true);
         directionTransform = directionObject.transform;
         directionTransform.rotation = Quaternion.Euler(0, 0, 0);
@@ -156,6 +170,7 @@ public class Player : MonoBehaviour
             GameManager.Instance.UpdateScore();
             moveDirection *= -1f;
             timeForHalfCycle -= 0.1f;
+            GameManager.AddScore();
             return;
         }
     }

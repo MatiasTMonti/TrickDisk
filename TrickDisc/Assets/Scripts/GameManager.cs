@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text bestScoreText;
 
     private int score;
+    public static int coins;
 
     [SerializeField] private Animator scoreAnimator;
 
@@ -49,6 +50,8 @@ public class GameManager : MonoBehaviour
         scoreAnimator.Play(scoreClip.name, -1, 0f);
 
         SpawnObstacle();
+
+        coins = PlayerPrefs.GetInt("Coins");
     }
 
     private void SpawnObstacle()
@@ -91,6 +94,11 @@ public class GameManager : MonoBehaviour
         SpawnObstacle();
     }
 
+    public static void AddScore()
+    {
+        coins++;
+    }
+
     public void EndGame()
     {
         endPanel.SetActive(true);
@@ -103,6 +111,8 @@ public class GameManager : MonoBehaviour
         int highScore = PlayerPrefs.HasKey(Constants.DATA.HIGH_SCORE) ? PlayerPrefs.GetInt(Constants.DATA.HIGH_SCORE) : 0;
 
         VibrationManager.Instance.Vibrate();
+
+        PlayerPrefs.SetInt("Coins", coins);
 
         if (score > highScore)
         {
