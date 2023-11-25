@@ -16,7 +16,7 @@ public class SkinShopItem : MonoBehaviour
 
         GetComponent<Image>().sprite = skin.sprite;
 
-        if (skinManager.IsUnlocked(skinIndex))
+        if (skinManager.IsUnlocked(skinIndex) || skinIndex == 0)
         {
             buyButton.gameObject.SetActive(false);
         }
@@ -29,7 +29,7 @@ public class SkinShopItem : MonoBehaviour
 
     public void OnSkinPressed()
     {
-        if (skinManager.IsUnlocked(skinIndex))
+        if (skinManager.IsUnlocked(skinIndex) || skinIndex == 0)
         {
             skinManager.SelectSkin(skinIndex);
         }
