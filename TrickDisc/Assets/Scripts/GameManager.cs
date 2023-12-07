@@ -114,6 +114,8 @@ public class GameManager : MonoBehaviour
 
         PlayerPrefs.SetInt("Coins", coins);
 
+        PlayGamesLogros.UnlockAchievemt("CgkI_b_uzKMWEAIQAg");
+
         if (score > highScore)
         {
             highScore = score;
