@@ -32,6 +32,11 @@ public class MainMenuManager : MonoBehaviour
         SceneManager.LoadScene(Constants.DATA.GAMEPLAY_SCENE);
     }
 
+    public void LogsScene()
+    {
+        SceneManager.LoadScene("LogsScene");
+    }
+
     public void ClickedQuit()
     {
 #if UNITY_EDITOR
