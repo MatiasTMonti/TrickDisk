@@ -88,6 +88,7 @@ public class GameManager : MonoBehaviour
 
     public void UpdateScore()
     {
+        GlobalLogger.Log(score.ToString());
         score++;
         scoreText.text = score.ToString();
         scoreAnimator.Play(scoreClip.name, -1, 0f);
@@ -114,6 +115,8 @@ public class GameManager : MonoBehaviour
 
         PlayerPrefs.SetInt("Coins", coins);
 
+        GlobalLogger.Log("Loss");
+
         PlayGamesLogros.UnlockAchievemt("CgkI_b_uzKMWEAIQAg");
 
         if (score > highScore)
@@ -121,6 +124,7 @@ public class GameManager : MonoBehaviour
             highScore = score;
             PlayerPrefs.SetInt(Constants.DATA.HIGH_SCORE, highScore);
             bestScoreText.text = "NEW BEST";
+            GlobalLogger.Log("New High Score");
         }
         else
         {

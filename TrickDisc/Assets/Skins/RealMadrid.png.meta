@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      RealMadrid_0: -5325580387951811198
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

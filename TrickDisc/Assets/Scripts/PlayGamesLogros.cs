@@ -22,7 +22,7 @@ public class PlayGamesLogros : MonoBehaviour
     {
         if (status == SignInStatus.Success)
         {
-            // Continue with Play Games Services
+            //Continue with Play Games Services
             string name = PlayGamesPlatform.Instance.GetUserDisplayName();
             string id = PlayGamesPlatform.Instance.GetUserId();
             string imgURL = PlayGamesPlatform.Instance.GetUserImageUrl();

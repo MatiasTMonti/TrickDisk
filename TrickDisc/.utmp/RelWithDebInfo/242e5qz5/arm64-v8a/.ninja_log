@@ -1,5 +1,5 @@
 # ninja log v5
-0	389	7236745572800999	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	b11b0002c4ea06f1
-389	647	7236745574800336	C:/Users/matia/Downloads/TrickDisk/TrickDisc/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/242e5qz5/obj/arm64-v8a/libswappywrapper.so	881431030711e018
 1	486	7236803171948755	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	b11b0002c4ea06f1
 487	718	7236803173860622	C:/Users/matia/Downloads/TrickDisk/TrickDisc/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/242e5qz5/obj/arm64-v8a/libswappywrapper.so	881431030711e018
+1	564	7236945277259771	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	b11b0002c4ea06f1
+565	1083	7236945281961157	C:/Users/matia/Downloads/TrickDisk/TrickDisc/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/242e5qz5/obj/arm64-v8a/libswappywrapper.so	881431030711e018

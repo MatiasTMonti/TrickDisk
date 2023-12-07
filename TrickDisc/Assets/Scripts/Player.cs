@@ -170,6 +170,7 @@ public class Player : MonoBehaviour
             GameManager.Instance.UpdateScore();
             moveDirection *= -1f;
             timeForHalfCycle -= 0.1f;
+            GlobalLogger.Log("Increse Move");
             GameManager.AddScore();
             return;
         }

@@ -66,5 +66,6 @@ public class AudioManager : MonoBehaviour
     public void ToggleSound()
     {
         effectSource.mute = IsSoundMuted;
+        GlobalLogger.Log("ToggleMute");
     }
 }
