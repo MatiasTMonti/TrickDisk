@@ -119,6 +119,8 @@ public class GameManager : MonoBehaviour
 
         PlayGamesLogros.UnlockAchievemt("CgkI_b_uzKMWEAIQAg");
 
+        CloudSaveManager.Instance.SaveProgressAtEndOfGame();
+
         if (score > highScore)
         {
             highScore = score;
