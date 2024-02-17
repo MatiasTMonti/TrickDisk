@@ -6,6 +6,21 @@ using System.Threading.Tasks;
 
 public class AuthManager : MonoBehaviour
 {
+    public static AuthManager Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     async void Start()
     {
         await UnityServices.InitializeAsync();

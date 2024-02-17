@@ -7,9 +7,6 @@ using Unity.Services.Core;
 
 public class CloudSaveManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI status;
-    [SerializeField] private TMP_InputField inpf;
-
     public static CloudSaveManager Instance { get; private set; }
 
     private void Awake()
@@ -30,29 +27,23 @@ public class CloudSaveManager : MonoBehaviour
         await UnityServices.InitializeAsync();
     }
 
-    public void SaveProgressAtEndOfGame()
+    public async void SaveData(Dictionary<string, object> gameData)
     {
-        SaveData();
-    }
-
-    public async void SaveData()
-    {
-        var data = new Dictionary<string, object>{{ "firstData", inpf.text }};
-        await CloudSaveService.Instance.Data.ForceSaveAsync(data);
+        await CloudSaveService.Instance.Data.ForceSaveAsync(gameData);
     }
 
     public async void LoadData()
     {
-        Dictionary<string, string> serverData = await CloudSaveService.Instance.Data.LoadAsync(new HashSet<string> { "firstData" });
+        //Dictionary<string, string> serverData = await CloudSaveService.Instance.Data.LoadAsync(new HashSet<string> { "firstData" });
         
-        if(serverData.ContainsKey("firstData"))
-        {
-            inpf.text = serverData["firstData"];
-        }
-        else
-        {
-            print("Key not found");
-        }
+        //if(serverData.ContainsKey("firstData"))
+        //{
+        //    inpf.text = serverData["firstData"];
+        //}
+        //else
+        //{
+        //    print("Key not found");
+        //}
     }
 
     public async void DeleteKey()

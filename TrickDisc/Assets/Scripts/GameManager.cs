@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -51,7 +52,7 @@ public class GameManager : MonoBehaviour
 
         SpawnObstacle();
 
-        coins = PlayerPrefs.GetInt("Coins");
+        coins = PlayerPrefs.GetInt(Constants.DATA.COINS);
     }
 
     private void SpawnObstacle()
@@ -113,13 +114,13 @@ public class GameManager : MonoBehaviour
 
         VibrationManager.Instance.Vibrate();
 
-        PlayerPrefs.SetInt("Coins", coins);
+        PlayerPrefs.SetInt(Constants.DATA.COINS, coins);
 
         GlobalLogger.Log("Loss");
 
         PlayGamesLogros.UnlockAchievemt("CgkI_b_uzKMWEAIQAg");
 
-        CloudSaveManager.Instance.SaveProgressAtEndOfGame();
+        CloudSaveManager.Instance.SaveData(new Dictionary<string, object> { { Constants.DATA.COINS, coins } });
 
         if (score > highScore)
         {
@@ -127,6 +128,7 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt(Constants.DATA.HIGH_SCORE, highScore);
             bestScoreText.text = "NEW BEST";
             GlobalLogger.Log("New High Score");
+            CloudSaveManager.Instance.SaveData(new Dictionary<string, object> { { Constants.DATA.HIGH_SCORE, score } });
         }
         else
         {
