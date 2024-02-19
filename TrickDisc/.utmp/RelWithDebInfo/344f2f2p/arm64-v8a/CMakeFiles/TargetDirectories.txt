@@ -1,0 +1,5 @@
+C:/Users/matias/Desktop/TrickDisk/TrickDisc/.utmp/RelWithDebInfo/344f2f2p/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/matias/Desktop/TrickDisk/TrickDisc/.utmp/RelWithDebInfo/344f2f2p/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/Users/matias/Desktop/TrickDisk/TrickDisc/.utmp/RelWithDebInfo/344f2f2p/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
+C:/Users/matias/Desktop/TrickDisk/TrickDisc/.utmp/RelWithDebInfo/344f2f2p/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
+C:/Users/matias/Desktop/TrickDisk/TrickDisc/.utmp/RelWithDebInfo/344f2f2p/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir

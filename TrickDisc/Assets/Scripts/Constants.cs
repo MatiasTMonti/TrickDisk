@@ -8,6 +8,7 @@ namespace Constants
         public const string GAMEPLAY_SCENE = "Gameplay";
         public const string SETTINGS_VIBRATION = "SETTINGS_VIBRATION";
         public const string TUTORIAL_KEY = "TUTORIAL_SHOW";
+        public const string COINS = "COINS";
     }
 
     public class TAGS

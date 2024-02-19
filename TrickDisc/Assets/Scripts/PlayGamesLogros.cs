@@ -3,10 +3,13 @@ using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using UnityEngine.SceneManagement;
 using TMPro;
+using Unity.Services.Authentication;
+using System.Threading.Tasks;
 
 public class PlayGamesLogros : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI detailsText;
+    [SerializeField] private string token;
 
     private void Start()
     {
@@ -18,7 +21,7 @@ public class PlayGamesLogros : MonoBehaviour
         PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
     }
 
-    internal void ProcessAuthentication(SignInStatus status)
+    internal async void ProcessAuthentication(SignInStatus status)
     {
         if (status == SignInStatus.Success)
         {
@@ -27,14 +30,29 @@ public class PlayGamesLogros : MonoBehaviour
             string id = PlayGamesPlatform.Instance.GetUserId();
             string imgURL = PlayGamesPlatform.Instance.GetUserImageUrl();
 
-            detailsText.text = "Success \n" + name;
+            PlayGamesPlatform.Instance.RequestServerSideAccess(true, code =>
+            {
+                Debug.Log("Authorization code: " + code);
+                token = code;
+            });
 
-            SceneManager.LoadScene("PreMenu");
+            GlobalLogger.Log("Player Id:" + id);
+
+            GlobalLogger.Log("Player Id1:" + AuthenticationService.Instance.PlayerId);
+
+            detailsText.text = "Success \n" + name;
         }
         else
         {
             detailsText.text = "Sign In failed!";
         }
+    }
+
+    async Task signInWithGooglePlayGames(string authCode)
+    {
+        await AuthenticationService.Instance.SignInWithGooglePlayGamesAsync(authCode);
+
+        SceneManager.LoadScene("PreMenu");
     }
 
     public void LoginFailed()
